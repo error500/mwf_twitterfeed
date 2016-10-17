@@ -1,0 +1,15 @@
+{
+    "name": "microwebfactory/mwf_twitterfeed",
+    "description": "Twitter feed for wordpress",
+    "type": "project",
+    "authors": [
+        {
+            "name": "microwebfactory",
+            "email": "microwebfactory@free.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "abraham/twitteroauth": "^0.6.6"
+    }
+}

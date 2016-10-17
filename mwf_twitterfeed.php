@@ -10,6 +10,9 @@ License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 */
+require "vendor/autoload.php";
+
+use Abraham\TwitterOAuth\TwitterOAuth;
 
 
 function mwf_shortcode_twitter ($atts,$content) {
@@ -53,27 +56,31 @@ function mwf_shortcode_twitter ($atts,$content) {
 				<li class="tweet">
 					<div class="header">
 
-						<?php if(isset($tweet->retweeted_status)) {
-							?>
-						<div class="h-card p-author" data-scribe="component:author">
-							<a href="<?php echo $tweet->retweeted_status->user->url?>">
-							<strong class="fullname"><?php echo $tweet->retweeted_status->user->name?></strong>
-							<span class="p-nickname">@<?php echo $tweet->retweeted_status->user->screen_name?></span>
-							<img class="avatar" src="<?php echo $tweet->retweeted_status->user->profile_image_url?>" />
-							</a>
-						</div>
-						<p  class="e-entry-title" ><?php echo preg_replace('/((www|http:\/\/|https:\/\/)[^ ]+)/', '<a href="\1">\1</a>', $tweet->retweeted_status->text); ?></p>
-						<div class="retweet-credit" class="right"><i class="ic-rt"></i>Retweet&eacute; par <?php echo $twitterName; ?></div>
-						<?php } else {?>
-						<div class="h-card p-author" data-scribe="component:author">
-							<a href="<?php echo $tweet->user->url?>">
-								<strong class="fullname"><?php echo $tweet->user->name?></strong>
-								<span class="p-nickname">@<?php echo $tweet->user->screen_name?></span>
-								<img class="avatar" src="<?php echo $tweet->user->profile_image_url?>" />
-							</a>
-						</div>
-						<p class="e-entry-title" ><?php echo preg_replace('/((www|http:\/\/|https:\/\/)[^ ]+)/', '<a href="\1">\1</a>', $tweet->text); ?></p>
-						<?php } ?>
+						<?php 
+						if(isset($tweet->retweeted_status)) {
+						?>
+							<div class="h-card p-author" data-scribe="component:author">
+								<a href="<?php echo $tweet->retweeted_status->user->url?>">
+								<strong class="fullname"><?php echo $tweet->retweeted_status->user->name?></strong>
+								<span class="p-nickname">@<?php echo $tweet->retweeted_status->user->screen_name?></span>
+								<img class="avatar" src="<?php echo $tweet->retweeted_status->user->profile_image_url?>" />
+								</a>
+							</div>
+							<p  class="e-entry-title" ><?php echo preg_replace('/((www|http:\/\/|https:\/\/)[^ ]+)/', '<a href="\1">\1</a>', $tweet->retweeted_status->text); ?></p>
+							<div class="retweet-credit" class="right"><i class="ic-rt"></i>Retweet&eacute; par <?php echo $twitterName; ?></div>
+						<?php 
+						} else {
+						?>
+							<div class="h-card p-author" data-scribe="component:author">
+								<a href="<?php echo $tweet->user->url?>">
+									<strong class="fullname"><?php echo $tweet->user->name?></strong>
+									<span class="p-nickname">@<?php echo $tweet->user->screen_name?></span>
+									<img class="avatar" src="<?php echo $tweet->user->profile_image_url?>" />
+								</a>
+							</div>
+							<p class="e-entry-title" ><?php echo preg_replace('/((www|http:\/\/|https:\/\/)[^ ]+)/', '<a href="\1">\1</a>', $tweet->text); ?></p>
+						<?php 
+						} ?>
 
 						<?php if (isset($tweet->entities->media)) {
 							foreach ($tweet->entities->media as $media) {
