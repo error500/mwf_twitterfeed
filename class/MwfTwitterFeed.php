@@ -2,7 +2,7 @@
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 class MwfTwitterFeed {
-	public static  function mwf_shortcode_twitter ($atts,$content) {
+	public static function mwf_shortcode_twitter ($atts,$content) {
 		
 		require __DIR__ .'/../config.php';
 		
