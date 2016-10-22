@@ -5,13 +5,11 @@ class MwfTwitterFeed {
 	public static  function mwf_shortcode_twitter ($atts,$content) {
 		
 		require __DIR__ .'/../config.php';
-
 		
 		wp_enqueue_style(
 			'mwf_twitter-css',
 			plugins_url('/../css/twitter.css',__FILE__ )
 		);
-
 
 		$cache = dirname(__FILE__) .'/../cache/tweets.tmp';
 

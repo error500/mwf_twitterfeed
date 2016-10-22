@@ -10,6 +10,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "abraham/twitteroauth": "^0.6.6"
+        "abraham/twitteroauth": "^0.7.0"
     }
 }
