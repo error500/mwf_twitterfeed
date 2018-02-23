@@ -11,9 +11,12 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 */
 
-require __DIR__ . '/vendor/autoload.php';
 
+require __DIR__ . './vendor/autoload.php';
 
-require __DIR__ . '/class/MwfTwitterFeed.php';
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
 
-add_shortcode( 'mwf_twitter',array( 'MwfTwitterFeed',  'mwf_shortcode_twitter' ));
+require __DIR__ . './class/MwfTwitterFeed.php';
+
+$mwfTwitterFeed = new MwfTwitterFeed();

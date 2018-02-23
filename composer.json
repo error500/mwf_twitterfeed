@@ -10,6 +10,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "abraham/twitteroauth": "^0.7.0"
+        "abraham/twitteroauth": "^0.7.0",
+        "vlucas/phpdotenv": "^2.4"
     }
 }
