@@ -1,3 +1,4 @@
 /cache/tweets.tmp
 /vendor
 .env
+.idea/*

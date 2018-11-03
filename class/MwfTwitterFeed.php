@@ -70,7 +70,7 @@ public function __construct()
             ob_start();
             ?>
             <div id="tweets">
-                <a class="follow-button right" title="Suivre <?php echo $this->twitterName; ?> sur Twitter"  role="button" href="https://twitter.com/<?php echo $this->twitterAccount;?>">
+                <a class="follow-button right" title="Suivre <?php echo $this->twitterAccount; ?> sur Twitter"  role="button" href="https://twitter.com/<?php echo $this->twitterName;?>">
                     <i class="ic-button-bird"></i>Suivre
                 </a>
                 <h2>Tweets</h2>
